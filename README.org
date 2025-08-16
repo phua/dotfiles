@@ -1,0 +1,16 @@
+#+TITLE: dotfiles
+#+AUTHOR: phua
+
+* dotfiles
+
+[[https://www.gnu.org/software/stow/][GNU Stow]]
+
+** Install
+
+#+BEGIN_SRC shell
+  git clone https://github.com/phua/dotfiles.git
+  # or, git clone git@github.com:phua/dotfiles.git
+  # or, gh repo clone phua/dotfiles
+
+  cd dotfiles && make install
+#+END_SRC
