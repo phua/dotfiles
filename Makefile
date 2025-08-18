@@ -29,7 +29,9 @@ install:
 		slrn \
 		ssh \
 		w3m \
-		X11
+		X11 \
+		\
+		xdg-user-dirs
 
 reinstall:
 	make STOW="$(STOW) -R" install

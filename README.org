@@ -5,6 +5,9 @@
 
 [[https://www.gnu.org/software/stow/][GNU Stow]]
 
+[[https://specifications.freedesktop.org/basedir-spec/basedir-spec-latest.html][XDG Base Directory Specification]]
+[[https://www.freedesktop.org/wiki/Software/xdg-user-dirs/][xdg-user-dirs]]
+
 ** Install
 
 #+BEGIN_SRC shell
