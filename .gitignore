@@ -1,3 +1,5 @@
 bash/.bash_history
 bash/.bash_secrets
 bash/.local/state/bash/history
+
+gh/.config/gh/hosts.yml

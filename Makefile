@@ -31,6 +31,8 @@ install:
 		w3m \
 		X11 \
 		\
+		gh \
+		git \
 		xdg-user-dirs
 
 reinstall:

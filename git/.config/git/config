@@ -1,0 +1,9 @@
+[user]
+    name = phua
+    email = phua@users.noreply.github.com
+[color]
+    ui = auto
+[core]
+    editor = emacsclient -t
+[init]
+    defaultBranch = main

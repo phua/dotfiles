@@ -29,6 +29,7 @@ export XDG_CONFIG_DIRS=/etc/xdg
 export XDG_DATA_DIRS=/usr/local/share:/usr/share
 
 # https://www.freedesktop.org/wiki/Software/xdg-user-dirs/
+# source ${XDG_CONFIG_HOME}/user-dirs.dirs
 export XDG_DESKTOP_DIR=${USER_DIRS}/Desktop
 export XDG_DOCUMENTS_DIR=${USER_DIRS}/Documents
 export XDG_DOWNLOAD_DIR=${HOME}/Downloads
