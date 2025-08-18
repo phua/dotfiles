@@ -3,3 +3,7 @@ bash/.bash_secrets
 bash/.local/state/bash/history
 
 gh/.config/gh/hosts.yml
+
+gnupg/.gnupg
+
+ssh/.ssh

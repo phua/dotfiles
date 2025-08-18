@@ -40,9 +40,15 @@ export XDG_TEMPLATES_DIR=${USER_DIRS}/Templates
 export XDG_VIDEOS_DIR=${KODI_DIRS}/Videos
 
 # https://wiki.archlinux.org/title/XDG_Base_Directory
+# export GNUPGHOME=${XDG_DATA_HOME}/gnupg
 
 export INFOPATH=${XDG_DATA_HOME}/info:${INFOPATH}
 export MANPATH=${XDG_DATA_HOME}/man:${MANPATH}
+
+if [ "$(hostname)" == "secret" ]; then
+    source "${HOME}"/.bash_secrets
+    eval "$(/usr/bin/keychain --absolute --dir "${XDG_RUNTIME_DIR}"/keychain --eval ~/.ssh/id_ecdsa ${GPG_KEYID})"
+fi
 
 source "${HOME}"/.bashrc
 
