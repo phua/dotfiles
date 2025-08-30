@@ -41,6 +41,7 @@ export XDG_VIDEOS_DIR=${KODI_DIRS}/Videos
 
 # https://wiki.archlinux.org/title/XDG_Base_Directory
 # export GNUPGHOME=${XDG_DATA_HOME}/gnupg
+export W3M_DIR=${XDG_STATE_HOME}/w3m
 
 export INFOPATH=${XDG_DATA_HOME}/info:${INFOPATH}
 export MANPATH=${XDG_DATA_HOME}/man:${MANPATH}
