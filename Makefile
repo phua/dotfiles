@@ -33,6 +33,7 @@ install:
 		\
 		gh \
 		git \
+		xdg-desktop-portal \
 		xdg-user-dirs
 
 reinstall:
