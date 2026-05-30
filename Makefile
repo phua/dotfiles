@@ -33,6 +33,7 @@ install:
 		\
 		gh \
 		git \
+		stalonetray \
 		xdg-desktop-portal \
 		xdg-user-dirs
 
