@@ -1,0 +1,43 @@
+#!/bin/sh
+
+# See /etc/X11/xinit/xinitrc
+
+/usr/bin/xrdb -merge "${XDG_CONFIG_HOME}"/X11/Xresources
+/usr/bin/xmodmap "${XDG_CONFIG_HOME}"/X11/Xmodmap
+
+if [ -d /etc/X11/xinit/xinitrc.d ] ; then
+    for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+        # shellcheck source=/etc/X11/xinit/xinitrc.d/50-systemd-user.sh
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
+fi
+
+# /usr/bin/xsetroot -solid black &
+# /bin/sh "${HOME}"/.fehbg &
+# /usr/bin/feh --no-fehbg --bg-scale "${XDG_PICTURES_DIR}"/bg.png &
+/usr/bin/feh --no-fehbg --bg-scale "$(/usr/bin/curl --silent https://www.nasa.gov/feeds/iotd-feed/ | /usr/bin/xmllint --xpath "string(//channel/item[1]/enclosure/@url)" -)" &
+
+# /usr/bin/xcompmgr -c &
+# /usr/bin/picom &
+
+/usr/bin/xset s on
+/usr/bin/xset s 600 60
+# /usr/bin/xscreensaver --no-splash &
+# /usr/bin/xautolock -time 10 -locker /usr/bin/slock &
+# /usr/bin/xss-lock -- /usr/bin/xscreensaver-command --lock &
+/usr/bin/xss-lock --notifier='/bin/bash /usr/share/doc/xss-lock/dim-screen.sh' -- /usr/bin/slock &
+
+/usr/bin/nm-applet --no-agent > /dev/null 2>&1 &
+/usr/bin/stalonetray --config "${XDG_CONFIG_HOME}"/stalonetrayrc &
+
+# See {/usr/share,${XDG_DATA_HOME}}/dbus-1/services/org.freedesktop.Notifications.service
+# /usr/lib/notification-daemon-1.0/notification-daemon &
+
+export XMODIFIERS=@im=ibus
+export GTK_IM_MODULE=ibus
+export QT_IM_MODULE=ibus
+# /usr/bin/ibus-daemon --daemonize --xim --replace &
+/usr/bin/ibus start &
+
+exec /usr/bin/xmonad

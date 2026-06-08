@@ -55,7 +55,7 @@ icon_size 24
                              # contains icon; must be larger than icon size;
                              # height is set to width if it is omitted;
                              # defaults to icon size
-slot_size 32x64
+# slot_size 32x64
 
 # log_level <level>          # controls the amount of logging output, level can
                              # be err (default), info, or trace (enabled only
